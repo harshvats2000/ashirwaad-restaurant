@@ -12,6 +12,9 @@ collections:
     label: "Menu"
     folder: "content/menu"
     create: true
+    path: "{{title}}/index"
+    media_folder: ""
+    public_folder: ""
     fields:
       - label: "Category"
         name: "category"
