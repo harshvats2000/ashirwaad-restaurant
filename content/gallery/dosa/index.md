@@ -1,4 +1,4 @@
 ---
-title: "Dosa"
-image: ./dosa.jpeg
+title: Restaurant
+image: restaurant.jpeg
 ---
