@@ -26,4 +26,15 @@ collections:
           - { label: "Dinner", value: "dinner" }
       - { label: "Name", name: "title", widget: "string" }
       - { label: "Image", name: "image", widget: "image" }
+      - { label: "Description", name: "description", widget: "string" }
       - { label: "Price", name: "price", widget: "number" }
+  - name: "gallery"
+    label: "Gallery"
+    folder: "content/gallery"
+    create: true
+    path: "{{title}}/index"
+    media_folder: ""
+    public_folder: ""
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Image", name: "image", widget: "image" }

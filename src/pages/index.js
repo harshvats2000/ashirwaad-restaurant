@@ -7,11 +7,12 @@ import SEO from "../components/seo"
 
 const IndexPage = props => {
   const { data } = props
+  console.log(data)
   return (
     <Layout>
       <SEO title="Home" />
       <h1>Our Menu</h1>
-      {data.allMarkdownRemark.edges.map((menu, i) => (
+      {data.menu.edges.map((menu, i) => (
         <div key={i}>
           <Img
             fixed={menu.node.frontmatter.image.childImageSharp.fixed}
@@ -27,14 +28,25 @@ const IndexPage = props => {
           <hr />
         </div>
       ))}
+      <h1>Our Gallery</h1>
+      {data.gallery.edges.map((pic, i) => (
+        <div key={i}>
+          <Img
+            fluid={pic.node.frontmatter.image.childImageSharp.fluid}
+            alt={pic.node.frontmatter.title}
+          />
+        </div>
+      ))}
       <Link to="/page-2/">Go to page 2</Link> <br />
     </Layout>
   )
 }
 
 export const menuQuery = graphql`
-  query {
-    allMarkdownRemark {
+  {
+    menu: allMarkdownRemark(
+      filter: { fileAbsolutePath: { regex: "/(menu)/" } }
+    ) {
       edges {
         node {
           frontmatter {
@@ -46,6 +58,24 @@ export const menuQuery = graphql`
               childImageSharp {
                 fixed(width: 200) {
                   ...GatsbyImageSharpFixed
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+    gallery: allMarkdownRemark(
+      filter: { fileAbsolutePath: { regex: "/(gallery)/" } }
+    ) {
+      edges {
+        node {
+          frontmatter {
+            title
+            image {
+              childImageSharp {
+                fluid(maxWidth: 1200) {
+                  ...GatsbyImageSharpFluid
                 }
               }
             }
