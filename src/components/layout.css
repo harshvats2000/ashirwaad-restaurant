@@ -1,8 +1,10 @@
-/* Customised style */
+/* Customised styles */
 :root {
-  --color-primary: #ffffff;
-  --color-secondary: #000000;
-  --color-accent: #bd0606;
+  --color-text-primary: #d3d3d3;
+  --color-text-secondary: #000000;
+  --color-text-main: #ff0000;
+  --color-bg-dark: #f71414;
+  --color-icon: #4f4f4f;
 }
 /* -----  ends  ----- */
 html {

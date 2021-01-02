@@ -1,8 +1,7 @@
 .Banner {
   height: 120vh;
-  width: 100%;
   background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
-    url("../images/banner.jpg");
+    url("../../content/banner/banner.jpg");
   background-size: cover;
 }
 .BannerContent {
@@ -11,7 +10,7 @@
   left: 5%;
 }
 .BannerContent h1 {
-  color: var(--color-accent);
+  color: var(--color-text-main);
   font-size: 6rem;
   margin: 0;
   font-family: "Dancing Script";
@@ -19,15 +18,15 @@
 }
 .BannerContent p {
   font-family: "Roboto";
-  color: var(--color-primary);
+  color: var(--color-text-primary);
   font-size: 1.75rem;
   margin: 20px 0 40px 0px;
   line-height: 3rem;
   max-width: 50%;
 }
 .BannerContent button {
-  background-color: var(--color-accent);
-  color: var(--color-primary);
+  background-color: var(--color-bg-dark);
+  color: var(--color-text-primary);
   font-weight: 600;
   padding: 20px 40px;
   font-size: 2rem;
@@ -92,4 +91,93 @@
   .BannerContent button {
     font-size: 1rem;
   }
+}
+
+/* about section */
+
+.About {
+  /* height: 120vh; */
+  background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+    url("../../content/about/about.jpg");
+  background-size: cover;
+}
+.AboutContent {
+  padding: 150px 100px;
+}
+.AboutContent h1 {
+  color: var(--color-text-main);
+  font-size: 6rem;
+  font-family: "Dancing Script";
+  font-weight: 800;
+}
+.AboutContent p {
+  margin-left: 40%;
+  width: 60%;
+  font-family: "Roboto";
+  color: var(--color-text-primary);
+  font-size: 1.75rem;
+  line-height: 3rem;
+}
+
+@media only screen and (max-width: 1200px) {
+  .AboutContent h1 {
+    font-size: 4rem;
+  }
+  .AboutContent p {
+    font-size: 1.5rem;
+    line-height: 2.5rem;
+  }
+}
+
+@media only screen and (max-width: 900px) {
+  .AboutContent {
+    padding: 80px 40px;
+  }
+  .AboutContent h1 {
+    font-size: 3rem;
+  }
+  .AboutContent p {
+    margin-left: 30%;
+    width: 70%;
+    font-size: 1.25rem;
+    line-height: 1.5rem;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .AboutContent {
+    padding: 50px 20px;
+  }
+  .AboutContent h1 {
+    font-size: 2rem;
+  }
+  .AboutContent p {
+    font-size: 0.875rem;
+    line-height: 1.25rem;
+  }
+}
+
+/* MENU SECTION */
+
+.Menu {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.Menu h1 {
+  font-family: "Dancing Script";
+  font-size: 6rem;
+  margin-top: 50px;
+}
+
+.MenuIcons {
+  display: flex;
+}
+
+.MenuIcon {
+  color: var(--color-icon);
+}
+.MenuIcon p {
+  font-family: "Dancing Script";
 }

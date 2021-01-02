@@ -2,8 +2,7 @@
   position: fixed;
   width: 100%;
   z-index: 999;
-  background-color: var(--color-accent);
-  opacity: 0.4;
+  background-color: rgba(0, 0, 0, 0.2);
 }
 
 .navbar {
@@ -21,22 +20,25 @@
   background-color: rgba(0, 0, 0, 0.9);
   list-style-type: none;
   display: none;
-  color: var(--color-primary);
+  color: var(--color-text-primary);
   margin: 0;
   padding-top: 25px;
 }
 
 .logo {
   text-decoration: none;
-  color: var(--color-primary);
+  color: var(--color-text-primary);
   font-family: "Dancing Script";
   font-weight: 800;
   font-size: 1.25rem;
+  display: inline-block;
+  font-size: 22px;
+  margin-left: 20px;
 }
 
 .navLinks {
   text-decoration: none;
-  color: var(--color-primary);
+  color: var(--color-text-primary);
   font-family: "Roboto";
   font-size: 1.25rem;
 }
@@ -44,12 +46,6 @@
 .mainNav li {
   text-align: center;
   margin-bottom: 20px;
-}
-
-.logo {
-  display: inline-block;
-  font-size: 22px;
-  margin-left: 20px;
 }
 
 .navbarToggle {
@@ -86,7 +82,6 @@
   .mainNav {
     all: unset;
     list-style-type: none;
-    color: var(--color-primary);
     display: flex;
     flex-direction: row;
     margin: 0;
@@ -107,6 +102,7 @@
 
   .logo {
     margin-top: 0;
+    color: var(--color-text-main);
   }
 
   .navbarToggle {
@@ -115,6 +111,6 @@
 
   .navLinks:hover {
     transition: 0.3s;
-    color: var(--color-accent);
+    color: var(--color-text-main);
   }
 }
