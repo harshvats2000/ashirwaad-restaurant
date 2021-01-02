@@ -5,12 +5,24 @@ import Img from "gatsby-image"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 
+import classes from "../styles/index.module.css"
+
 const IndexPage = props => {
   const { data } = props
   console.log(data)
   return (
     <Layout>
       <SEO title="Home" />
+      <div className={classes.Banner}>
+        <div className={classes.BannerContent}>
+          <h1>ASHIRWAAD</h1>
+          <p>
+            Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam
+            nonummy nibh euismod tincidunt ut laoreet dolore magna{" "}
+          </p>
+          <button>BOOK A TABLE</button>
+        </div>
+      </div>
       <h1>Our Menu</h1>
       {data.menu.edges.map((menu, i) => (
         <div key={i}>

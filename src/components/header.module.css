@@ -1,0 +1,120 @@
+.Header {
+  position: fixed;
+  width: 100%;
+  z-index: 999;
+  background-color: var(--color-accent);
+  opacity: 0.4;
+}
+
+.navbar {
+  font-size: 18px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+}
+
+.mainNav {
+  position: absolute;
+  left: 0;
+  top: 60px;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.9);
+  list-style-type: none;
+  display: none;
+  color: var(--color-primary);
+  margin: 0;
+  padding-top: 25px;
+}
+
+.logo {
+  text-decoration: none;
+  color: var(--color-primary);
+  font-family: "Dancing Script";
+  font-weight: 800;
+  font-size: 1.25rem;
+}
+
+.navLinks {
+  text-decoration: none;
+  color: var(--color-primary);
+  font-family: "Roboto";
+  font-size: 1.25rem;
+}
+
+.mainNav li {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.logo {
+  display: inline-block;
+  font-size: 22px;
+  margin-left: 20px;
+}
+
+.navbarToggle {
+  position: absolute;
+  top: 15px;
+  right: 20px;
+  cursor: pointer;
+}
+
+.chkToggle {
+  display: none;
+}
+
+.chkToggle:checked + .mainNav {
+  display: block;
+}
+
+@media only screen and (min-width: 900px) {
+  .Header {
+    background-color: rgba(0, 0, 0, 0.2);
+  }
+  .navbar {
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 0;
+    height: 70px;
+    align-items: center;
+  }
+
+  .chkToggle:checked + .mainNav {
+    display: flex;
+  }
+
+  .mainNav {
+    all: unset;
+    list-style-type: none;
+    color: var(--color-primary);
+    display: flex;
+    flex-direction: row;
+    margin: 0;
+    margin-right: 30px;
+  }
+
+  .mainNav li {
+    height: fit-content;
+    margin-bottom: 0;
+  }
+
+  .navLinks {
+    height: 100%;
+    display: grid;
+    place-items: center;
+    margin: auto 20px;
+  }
+
+  .logo {
+    margin-top: 0;
+  }
+
+  .navbarToggle {
+    display: none;
+  }
+
+  .navLinks:hover {
+    transition: 0.3s;
+    color: var(--color-accent);
+  }
+}

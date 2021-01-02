@@ -1,3 +1,10 @@
+/* Customised style */
+:root {
+  --color-primary: #ffffff;
+  --color-secondary: #000000;
+  --color-accent: #bd0606;
+}
+/* -----  ends  ----- */
 html {
   -ms-text-size-adjust: 100%;
   -webkit-text-size-adjust: 100%;
