@@ -123,14 +123,18 @@
 }
 
 @media only screen and (max-width: 900px) {
+  .About {
+    height: 100vh;
+  }
   .AboutContent {
-    padding: 80px 40px;
+    padding: 15% 40px;
   }
   .AboutContent h1 {
-    font-size: 3rem;
+    font-size: 5rem;
   }
   .AboutContent p {
     margin-left: 30%;
+    margin-top: 10%;
     width: 70%;
     font-size: 1.25rem;
     line-height: 1.5rem;
@@ -139,13 +143,14 @@
 
 @media only screen and (max-width: 600px) {
   .AboutContent {
-    padding: 50px 20px;
+    padding: 30% 10px;
   }
   .AboutContent h1 {
-    font-size: 2rem;
+    font-size: 4rem;
   }
   .AboutContent p {
-    font-size: 0.875rem;
+    margin-top: 10%;
+    font-size: 1rem;
     line-height: 1.25rem;
   }
 }
@@ -156,57 +161,295 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  background-color: rgba(0, 0, 0, 0.2);
 }
 
-.Menu h1 {
+.MenuTitle > h1 {
   font-family: "Dancing Script";
   font-size: 6rem;
-  margin-top: 40px;
+  text-align: center;
+  margin: 60px auto;
 }
 
-.MenuIcons {
+.MenuTitle {
+  position: relative;
+  width: 100%;
+}
+
+.MenuTitle img {
+  --width: 800px;
+  left: calc(var(--width) / -2);
+  top: calc(var(--width) / -2);
+  position: absolute;
+  z-index: -1;
+  box-shadow: 0 0 45px var(--color-icon);
+  border-radius: 50%;
+  -webkit-animation: spin 15s linear infinite;
+  -moz-animation: spin 15s linear infinite;
+  animation: spin 15s linear infinite;
+}
+@-moz-keyframes spin {
+  100% {
+    -moz-transform: rotate(360deg);
+  }
+}
+@-webkit-keyframes spin {
+  100% {
+    -webkit-transform: rotate(360deg);
+  }
+}
+@keyframes spin {
+  100% {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+
+.MenuTabs {
   display: flex;
+  flex-direction: column;
 }
 
-.MenuIcon {
+.MenuTabList {
+  display: flex;
+  align-self: center;
+  margin-bottom: 60px;
+}
+
+.MenuTab {
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 210px;
-  padding: 15px 0;
+  width: 180px;
+  padding: 20px 0 40px 0;
   color: var(--color-icon);
   border-radius: 8px;
-  transition: ease 1s;
+  transition: ease 0.5s;
 }
-.MenuIcon:hover {
+
+.MenuTab:hover {
   cursor: pointer;
-  box-shadow: 0 0 15px var(--color-icon);
+  background-color: rgba(255, 255, 255, 0.4);
+  box-shadow: 0 0 10px var(--color-icon);
 }
 
-.MenuIcon svg {
-  width: 80px;
-}
-.MenuIcon p {
-  font-size: 3rem;
-  font-family: "Dancing Script";
-  margin-top: 10px;
-}
-.MenuIcon:nth-of-type(2) {
-  margin: 0 20px;
+.SelectedMenuTab {
+  box-shadow: 0 0 5px var(--color-icon);
+  background-color: rgba(255, 255, 255, 0.4);
 }
 
-@media only screen and (max-width:600px){
-  .Menu h1 {
-    font-size: 2rem;
-    margin-top: 20px;
+.MenuTab p {
+  font-size: 2rem;
+  font-family: "Roboto";
+}
+
+.MenuTab:nth-of-type(2) {
+  margin-left: 20px;
+  margin-right: 20px;
+}
+
+.MenuTabPanel {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  max-width: 1200px;
+  margin-bottom: 120px;
+}
+
+.MenuTabPanel > div {
+  position: relative;
+}
+
+.MenuImage {
+  margin-bottom: 45px;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1),
+    0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  border-radius: 8px;
+  height: 340px;
+  width: 340px;
+}
+
+.MenuImage::before {
+  content: "";
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.4);
+  z-index: 5;
+}
+
+.MenuImage:hover {
+  cursor: pointer;
+}
+
+.MenuTabPanelImgContent p {
+  font-family: "Roboto";
+  text-transform: capitalize;
+  font-size: 2rem;
+  transform: translate(-50%, 50%);
+  color: var(--color-text-primary);
+  cursor: pointer;
+  font-weight: 800;
+}
+
+.MenuTabPanelImgContent p:nth-of-type(1) {
+  position: absolute;
+  left: 50%;
+  top: 15px;
+  z-index: 10;
+}
+
+.MenuTabPanelImgContent p:nth-of-type(2) {
+  position: absolute;
+  left: 50%;
+  bottom: 60px;
+  z-index: 10;
+}
+
+@media only screen and (max-width: 1200px) {
+  .MenuTitle > h1 {
+    font-size: 4rem;
   }
-  .MenuIcon{
+  .MenuTitle img {
+    --width: 900px;
+  }
+  .MenuTab {
+    width: 150px;
+    padding: 18px 0 30px 0;
+  }
+
+  .MenuTab p {
+    font-size: 1.75rem;
+  }
+
+  .MenuTabPanel {
+    max-width: 950px;
+  }
+
+  .MenuImage {
+    margin-bottom: 25px;
+    height: 280px;
+    width: 280px;
+  }
+
+  .MenuTabPanelImgContent p {
+    font-size: 1.75rem;
+  }
+
+  .MenuTabPanelImgContent p:nth-of-type(1) {
+    top: 10px;
+  }
+
+  .MenuTabPanelImgContent p:nth-of-type(2) {
+    bottom: 30px;
+  }
+}
+
+@media only screen and (max-width: 900px) {
+  .MenuTitle img {
+    width: 950px;
+  }
+  .MenuTitle > h1 {
+    font-size: 3rem;
+    margin: 40px auto;
+  }
+
+  .MenuTabList {
+    margin-bottom: 40px;
+  }
+
+  .MenuTab {
+    width: 120px;
+    padding: 8px 0 16px 0;
+  }
+
+  .MenuTab p {
+    font-size: 1.5rem;
+  }
+
+  .MenuTab:nth-of-type(2) {
+    margin-left: 8px;
+    margin-right: 8px;
+  }
+
+  .MenuTabPanel {
+    max-width: 700px;
+    margin-bottom: 40px;
+  }
+
+  .MenuImage {
+    height: 180px;
+    width: 180px;
+  }
+
+  .MenuTabPanelImgContent p {
+    font-size: 1.5rem;
+    font-weight: 600;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .MenuTitle > h1 {
+    font-size: 2rem;
+    margin: 20px auto;
+  }
+
+  .MenuTitle img {
+    --width: 600px;
+  }
+
+  .MenuTabList {
+    margin-bottom: 20px;
+  }
+
+  .MenuTab {
     width: 100px;
   }
-  .MenuIcon svg {
-    width: 20px;
+
+  .MenuTab p {
+    font-size: 1.25rem;
   }
-  .MenuIcon p {
-    font-size: 1rem;
+
+  .MenuTabPanel {
+    max-width: 480px;
+  }
+
+  .MenuImage {
+    margin-bottom: 15px;
+    height: 140px;
+    width: 140px;
+  }
+
+  .MenuTabPanelImgContent p {
+    font-size: 1.25rem;
+  }
+  .MenuTabPanelImgContent p:nth-of-type(1) {
+    top: 5px;
+  }
+
+  .MenuTabPanelImgContent p:nth-of-type(2) {
+    bottom: 15px;
+  }
+}
+
+@media only screen and (max-width: 450px) {
+  .MenuTitle img {
+    --width: 450px;
+  }
+
+  .MenuImage {
+    margin-bottom: 25px;
+    height: 170px;
+    width: 170px;
+  }
+
+  .MenuTabPanelImgContent p:nth-of-type(1) {
+    top: 10px;
+  }
+
+  .MenuTabPanelImgContent p:nth-of-type(2) {
+    bottom: 30px;
   }
 }
