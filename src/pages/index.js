@@ -1,5 +1,5 @@
 import React from "react"
-import { Link, graphql } from "gatsby"
+import { graphql } from "gatsby"
 import Img from "gatsby-image"
 
 import {Tab, Tabs, TabPanel, TabList} from 'react-tabs'
@@ -15,7 +15,6 @@ import DinnerSvg from '../components/MenuSvg/dinner.js'
 
 const IndexPage = props => {
   const { data } = props
-  console.log(data)
   return (
     <Layout>
       <SEO title="Home" />

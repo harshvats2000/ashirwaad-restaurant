@@ -1,9 +1,27 @@
 import { Link } from "gatsby"
 import React from "react"
-import classes from "./header.module.css"
+import classes from "./index.module.css"
+import {useState,useEffect} from 'react'
 
-const Header = ({ siteTitle }) => (
-  <header className={classes.Header}>
+const Header = () => {
+
+  useEffect(() => {
+    const h = document.querySelector("header");
+    var prev_Y = window.pageYOffset;
+    window.addEventListener("scroll", () => {
+      if (window.pageYOffset > 100) {
+        h.style.backdropFilter = 'blur(10px)';
+      } else {
+        h.style.backdropFilter = 'blur(0px)';
+      }
+      prev_Y = window.pageYOffset;
+    });
+  }, [])
+
+  
+
+  return(
+  <header className={classes.Header} id="header">
     <nav className={classes.navbar}>
       <label className={classes.navbarToggle} htmlFor="chkToggle">
         <div>
@@ -41,5 +59,5 @@ const Header = ({ siteTitle }) => (
     </nav>
   </header>
 )
-
+  }
 export default Header

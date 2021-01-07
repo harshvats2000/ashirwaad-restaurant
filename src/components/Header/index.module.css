@@ -19,7 +19,6 @@
   top: 60px;
   width: 100%;
   background-color: rgba(0, 0, 0, 0.2);
-  backdrop-filter: blur(6px);
   list-style-type: none;
   color: var(--color-text-primary);
   margin: 0;
@@ -64,6 +63,7 @@
 .navbarToggle div span {
   width: 36px;
   height: 4px;
+  border-radius: 2px;
   background-color: white;
 }
 
