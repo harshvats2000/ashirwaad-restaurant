@@ -2,7 +2,7 @@
   position: fixed;
   width: 100%;
   z-index: 999;
-  background-color: rgba(0, 0, 0, 0.2);
+  transition: 1s;
 }
 
 .navbar {
@@ -16,9 +16,9 @@
   display: none;
   position: absolute;
   left: 0;
-  top: 60px;
+  top: 100%;
   width: 100%;
-  background-color: rgba(0, 0, 0, 0.2);
+  background-color: rgba(0, 0, 0, 0.6);
   list-style-type: none;
   color: var(--color-text-primary);
   margin: 0;
