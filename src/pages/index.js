@@ -12,6 +12,9 @@ import plate from "../images/plate.png"
 import BreakfastSvg from '../components/MenuSvg/breakfast.js'
 import LunchSvg from '../components/MenuSvg/lunch.js'
 import DinnerSvg from '../components/MenuSvg/dinner.js'
+import PhoneSvg from "../components/ContactSvg/phone"
+import MailSvg from "../components/ContactSvg/mail"
+import AddressSvg from "../components/ContactSvg/address"
 
 const IndexPage = props => {
   const { data } = props
@@ -90,6 +93,35 @@ const IndexPage = props => {
         </div>
       ))}
       <Link to="/page-2/">Go to page 2</Link> <br /> */}
+      <div className={classes.ContactSection}>
+      <div className={classes.Contact}>
+        <div className={classes.Map}>
+        </div>
+        <div className={classes.ContactContent}>
+          <h1>Contact Us</h1>
+          <div className={classes.ContactIcon}>
+            <div>
+              <PhoneSvg/>
+              <p>
+                (+91) 9306121752
+              </p>
+            </div>
+            <div>
+              <MailSvg/>
+              <p>
+                ashirwaad@gmail.com
+              </p>
+            </div>
+            <div>
+              <AddressSvg/>
+              <p>
+                Ashirwaad Hotel, Ganpati Nagar, Haryana
+              </p>
+            </div>
+          </div>
+          </div>
+        </div>
+      </div>
     </Layout>
   )
 }
