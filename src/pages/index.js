@@ -147,7 +147,7 @@ export const menuQuery = graphql`
         node {
           id
           childImageSharp {
-            fluid(maxWidth: 1200) {
+            fluid(maxWidth: 1000) {
               ...GatsbyImageSharpFluid
             }
           }
