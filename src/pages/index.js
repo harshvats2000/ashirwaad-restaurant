@@ -11,6 +11,9 @@ import classes from "../styles/index.module.css"
 import BreakfastSvg from "../components/MenuSvg/breakfast.js"
 import LunchSvg from "../components/MenuSvg/lunch.js"
 import DinnerSvg from "../components/MenuSvg/dinner.js"
+import PhoneSvg from "../components/ContactSvg/phone.js"
+import MailSvg from "../components/ContactSvg/mail.js"
+import AddressSvg from "../components/ContactSvg/address.js"
 
 const IndexPage = props => {
   const { data } = props
@@ -28,7 +31,7 @@ const IndexPage = props => {
           <button>BOOK A TABLE</button>
         </div>
       </div>
-      <div className={classes.About}>
+      <div className={classes.About} id="about">
         <div className={classes.AboutContent}>
           <h1>About Us</h1>
           <p>
@@ -40,7 +43,7 @@ const IndexPage = props => {
           </p>
         </div>
       </div>
-      <div className={classes.Menu}>
+      <div className={classes.Menu} id="menu">
         <div className={classes.MenuTitle}>
           <h1>Our Menu</h1>
           <div className={classes.plate_img}>
@@ -98,13 +101,20 @@ const IndexPage = props => {
         </div>
       ))}
       <Link to="/page-2/">Go to page 2</Link> <br /> */}
-      <div className={classes.ContactSection}>
+      <div className={classes.ContactSection} id="contact">
       <div className={classes.Contact}>
         <div className={classes.Map}>
+          <a href="https://www.google.com/maps/search/ashirwad+restaurant+faridabad/@28.4091967,77.3176729,17z" style={{textDecoration: 'none', color: "inherit"}}>
+        <Img
+              fluid={data.map.edges[0].node.childImageSharp.fluid}
+              alt={data.map.edges[0].node.name}
+            />
+            </a>
         </div>
         <div className={classes.ContactContent}>
           <h1>Contact Us</h1>
-          <div className={classes.ContactIcon}>
+          <div className={classes.ContactIconContent}>
+            <div className={classes.ContactIcon}>
             <div>
               <PhoneSvg/>
               <p>
@@ -122,6 +132,7 @@ const IndexPage = props => {
               <p>
                 Ashirwaad Hotel, Ganpati Nagar, Haryana
               </p>
+            </div>
             </div>
           </div>
           </div>
@@ -178,6 +189,19 @@ export const menuQuery = graphql`
           id
           childImageSharp {
             fluid(maxWidth: 1200) {
+              ...GatsbyImageSharpFluid
+            }
+          }
+          name
+        }
+      }
+    }
+    map: allFile(filter: { relativePath: { eq: "map.png" } }) {
+      edges {
+        node {
+          id
+          childImageSharp {
+            fluid(maxWidth: 600, maxHeight: 600) {
               ...GatsbyImageSharpFluid
             }
           }

@@ -35,22 +35,27 @@ const Header = () => {
         <input type="checkbox" className={classes.chkToggle} id="chkToggle" />
         <ul className={classes.mainNav}>
           <li>
-            <Link to="/about" className={classes.navLinks}>
+            <Link to="/#about" className={classes.navLinks} >
               ABOUT
             </Link>
           </li>
           <li>
-            <Link to="/menu" className={classes.navLinks}>
+            <Link to="/#menu" className={classes.navLinks}>
               MENU
             </Link>
           </li>
           <li>
-            <Link to="/gallery" className={classes.navLinks}>
+            <Link to="/#bookTable" className={classes.navLinks}>
+              BOOK TABLE
+            </Link>
+          </li>
+          <li>
+            <Link to="/#gallery" className={classes.navLinks}>
               GALLERY
             </Link>
           </li>
           <li>
-            <Link to="/contact" className={classes.navLinks}>
+            <Link to="/#contact" className={classes.navLinks}>
               CONTACT
             </Link>
           </li>
