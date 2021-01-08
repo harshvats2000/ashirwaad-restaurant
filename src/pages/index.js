@@ -2,22 +2,19 @@ import React from "react"
 import { graphql } from "gatsby"
 import Img from "gatsby-image"
 
-import {Tab, Tabs, TabPanel, TabList} from 'react-tabs'
+import { Tab, Tabs, TabPanel, TabList } from "react-tabs"
 
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 
 import classes from "../styles/index.module.css"
-import plate from "../images/plate.png"
-import BreakfastSvg from '../components/MenuSvg/breakfast.js'
-import LunchSvg from '../components/MenuSvg/lunch.js'
-import DinnerSvg from '../components/MenuSvg/dinner.js'
-import PhoneSvg from "../components/ContactSvg/phone"
-import MailSvg from "../components/ContactSvg/mail"
-import AddressSvg from "../components/ContactSvg/address"
+import BreakfastSvg from "../components/MenuSvg/breakfast.js"
+import LunchSvg from "../components/MenuSvg/lunch.js"
+import DinnerSvg from "../components/MenuSvg/dinner.js"
 
 const IndexPage = props => {
   const { data } = props
+  console.log(data)
   return (
     <Layout>
       <SEO title="Home" />
@@ -45,44 +42,52 @@ const IndexPage = props => {
       </div>
       <div className={classes.Menu}>
         <div className={classes.MenuTitle}>
-        <h1>Our Menu</h1>
-        <img src={plate} alt=""/>
-        </div>
-        <Tabs selectedTabClassName={classes.SelectedMenuTab} className={classes.MenuTabs}>
-        <TabList className={classes.MenuTabList}>
-          <Tab className={classes.MenuTab}>
-            <BreakfastSvg/>
-            <p>Breakfast</p>
-          </Tab>
-          <Tab className={classes.MenuTab}>
-            <LunchSvg/>
-            <p>Lunch</p>
-          </Tab>
-          <Tab className={classes.MenuTab}>
-            <DinnerSvg/>
-            <p>Dinner</p>
-          </Tab>
-        </TabList>
-        <TabPanel className={classes.MenuTabPanel}>
-        {data.menu.edges.map((menu, i) => (
-        <div key={i}>
-          <Img
-            className={classes.MenuImage}
-            fluid={menu.node.frontmatter.image.childImageSharp.fluid}
-            alt={menu.node.frontmatter.title}
-          />
-          <div className={classes.MenuTabPanelImgContent}>
-          <p>{menu.node.frontmatter.title}</p>
-          <p>₹ {menu.node.frontmatter.price} </p>
+          <h1>Our Menu</h1>
+          <div className={classes.plate_img}>
+            <Img
+              fluid={data.plate.edges[0].node.childImageSharp.fluid}
+              alt={data.plate.edges[0].node.name}
+            />
           </div>
         </div>
-      ))}
-        </TabPanel>
-        <TabPanel>Hi</TabPanel>
-        <TabPanel>World</TabPanel>
+        <Tabs
+          selectedTabClassName={classes.SelectedMenuTab}
+          className={classes.MenuTabs}
+        >
+          <TabList className={classes.MenuTabList}>
+            <Tab className={classes.MenuTab}>
+              <BreakfastSvg />
+              <p>Breakfast</p>
+            </Tab>
+            <Tab className={classes.MenuTab}>
+              <LunchSvg />
+              <p>Lunch</p>
+            </Tab>
+            <Tab className={classes.MenuTab}>
+              <DinnerSvg />
+              <p>Dinner</p>
+            </Tab>
+          </TabList>
+          <TabPanel className={classes.MenuTabPanel}>
+            {data.menu.edges.map((menu, i) => (
+              <div key={i}>
+                <Img
+                  className={classes.MenuImage}
+                  fluid={menu.node.frontmatter.image.childImageSharp.fluid}
+                  alt={menu.node.frontmatter.title}
+                />
+                <div className={classes.MenuTabPanelImgContent}>
+                  <p>{menu.node.frontmatter.title}</p>
+                  <p>₹ {menu.node.frontmatter.price} </p>
+                </div>
+              </div>
+            ))}
+          </TabPanel>
+          <TabPanel>Hi</TabPanel>
+          <TabPanel>World</TabPanel>
         </Tabs>
       </div>
-      
+
       {/* <h1>Our Gallery</h1>
       {data.gallery.edges.map((pic, i) => (
         <div key={i}>
@@ -166,7 +171,21 @@ export const menuQuery = graphql`
           }
         }
       }
+    }
+    plate: allFile(filter: { relativePath: { eq: "plate.png" } }) {
+      edges {
+        node {
+          id
+          childImageSharp {
+            fluid(maxWidth: 1200) {
+              ...GatsbyImageSharpFluid
+            }
+          }
+          name
+        }
+      }
+    }
   }
-}`
+`
 
 export default IndexPage

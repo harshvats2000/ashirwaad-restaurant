@@ -87,7 +87,6 @@
 /* about section */
 
 .About {
-  /* height: 120vh; */
   background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
     url("../../content/about/about.jpg");
   background-size: cover;
@@ -174,13 +173,14 @@
   width: 100%;
 }
 
-.MenuTitle img {
+.plate_img {
   --width: 800px;
+  width: var(--width);
   left: calc(var(--width) / -2);
   top: calc(var(--width) / -2);
   position: absolute;
   z-index: -1;
-  box-shadow: 0 0 45px var(--color-icon);
+  box-shadow: 0 0 70px var(--color-icon);
   border-radius: 50%;
   -webkit-animation: spin 15s linear infinite;
   -moz-animation: spin 15s linear infinite;
@@ -310,7 +310,7 @@
   .MenuTitle > h1 {
     font-size: 4rem;
   }
-  .MenuTitle img {
+  .plate_img {
     --width: 900px;
   }
   .MenuTab {
@@ -346,8 +346,8 @@
 }
 
 @media only screen and (max-width: 900px) {
-  .MenuTitle img {
-    width: 950px;
+  .plate_img {
+    --width: 950px;
   }
   .MenuTitle > h1 {
     font-size: 3rem;
@@ -394,7 +394,7 @@
     margin: 20px auto;
   }
 
-  .MenuTitle img {
+  .plate_img {
     --width: 600px;
   }
 
@@ -433,8 +433,8 @@
 }
 
 @media only screen and (max-width: 450px) {
-  .MenuTitle img {
-    --width: 450px;
+  .plate_img {
+    --width: 330px;
   }
 
   .MenuImage {
