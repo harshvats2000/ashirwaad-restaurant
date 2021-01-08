@@ -14,7 +14,6 @@ import DinnerSvg from "../components/MenuSvg/dinner.js"
 
 const IndexPage = props => {
   const { data } = props
-  console.log(data)
   return (
     <Layout>
       <SEO title="Home" />

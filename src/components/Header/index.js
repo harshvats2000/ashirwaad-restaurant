@@ -22,6 +22,7 @@ const Header = () => {
   return (
     <header className={classes.Header} id="header">
       <nav className={classes.navbar}>
+        <input type="checkbox" className={classes.chkToggle} id="chkToggle" />
         <label className={classes.navbarToggle} htmlFor="chkToggle">
           <div>
             <span></span>
@@ -32,7 +33,7 @@ const Header = () => {
         <Link to="/" className={classes.logo}>
           ASHIRWAAD
         </Link>
-        <input type="checkbox" className={classes.chkToggle} id="chkToggle" />
+        {/* <input type="checkbox" className={classes.chkToggle} id="chkToggle" /> */}
         <ul className={classes.mainNav}>
           <li>
             <Link to="/about" className={classes.navLinks}>
