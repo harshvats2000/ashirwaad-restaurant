@@ -43,6 +43,11 @@
   font-size: 1.25rem;
 }
 
+.navLinks:hover {
+  transition: 0.3s;
+  color: var(--color-text-main);
+}
+
 .mainNav li {
   text-align: center;
   margin-bottom: 20px;

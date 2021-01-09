@@ -122,7 +122,7 @@
     height: 100vh;
   }
   .AboutContent {
-    padding: 15% 40px;
+    padding: 20% 40px;
   }
   .AboutContent h1 {
     font-size: 5rem;
@@ -138,7 +138,7 @@
 
 @media only screen and (max-width: 600px) {
   .AboutContent {
-    padding: 30% 10px;
+    padding: 40% 10px;
   }
   .AboutContent h1 {
     font-size: 4rem;
@@ -447,5 +447,157 @@
 
   .MenuTabPanelImgContent p:nth-of-type(2) {
     bottom: 30px;
+  }
+}
+
+/* Contact and Map section */
+
+.ContactSection {
+  background-color: white;
+}
+
+.Contact {
+  display: flex;
+  max-width: 1400px;
+  margin: auto;
+  align-items: center;
+  height: 100vh;
+}
+
+.Map {
+  width: 50%;
+}
+
+.ContactContent {
+  padding: 0px 60px;
+}
+
+.ContactContent h1 {
+  font-size: 4rem;
+  margin-bottom: 60px;
+  font-family: "Dancing Script";
+  text-align: center;
+  color: var(--color-icon);
+  position: relative;
+}
+
+.ContactContent h1::before {
+  content: "";
+  position: absolute;
+  left: 3%;
+  top: 50%;
+  height: 2px;
+  width: 18%;
+  background-color: var(--color-icon);
+}
+.ContactContent h1::after {
+  content: "";
+  position: absolute;
+  right: 3%;
+  top: 50%;
+  height: 2px;
+  width: 18%;
+  background-color: var(--color-icon);
+}
+
+.ContactIcon div {
+  display: flex;
+  align-items: center;
+  margin: 15px 0px;
+}
+
+.ContactIcon div p {
+  margin: 0;
+  font-size: 1.75rem;
+  line-height: 2rem;
+  font-family: "Roboto";
+  color: var(--color-icon);
+}
+
+@media only screen and (max-width: 1200px) {
+  .Contact {
+    max-width: 950px;
+    height: fit-content;
+  }
+
+  .ContactContent {
+    padding: 0px 40px;
+  }
+
+  .ContactContent h1 {
+    font-size: 3rem;
+    margin-bottom: 0px;
+  }
+
+  .ContactIcon div {
+    margin: 10px 0px;
+  }
+
+  .ContactIcon div p {
+    font-size: 1.5rem;
+  }
+}
+
+@media only screen and (max-width: 900px) {
+  .Contact {
+    max-width: 600px;
+  }
+
+  .ContactContent {
+    padding: 0px 30px;
+  }
+
+  .ContactContent h1 {
+    font-size: 2rem;
+  }
+
+  .ContactIcon div {
+    margin: 10px 0px;
+  }
+
+  .ContactIcon div p {
+    font-size: 1rem;
+    line-height: 1rem;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .Contact {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .Map {
+    order: 2;
+    width: 100%;
+  }
+
+  .ContactContent {
+    height: 340px;
+    width: 100%;
+    padding-top: 60px;
+  }
+
+  .ContactContent h1 {
+    position: relative;
+  }
+
+  .ContactContent h1::before {
+    content: "";
+    position: absolute;
+    left: 5%;
+    top: 18px;
+    height: 2px;
+    width: 20%;
+    background-color: var(--color-icon);
+  }
+  .ContactContent h1::after {
+    content: "";
+    position: absolute;
+    right: 5%;
+    top: 18px;
+    height: 2px;
+    width: 20%;
+    background-color: var(--color-icon);
   }
 }
