@@ -1,7 +1,7 @@
 import { Link } from "gatsby"
 import React from "react"
 import classes from "./index.module.css"
-import { useState, useEffect } from "react"
+import { useEffect } from "react"
 
 const Header = () => {
   useEffect(() => {
@@ -29,13 +29,13 @@ const Header = () => {
             <span></span>
           </div>
         </label>
-        <Link to="/" className={classes.logo}>
+        <Link to="/#banner" className={classes.logo}>
           ASHIRWAAD
         </Link>
         <input type="checkbox" className={classes.chkToggle} id="chkToggle" />
         <ul className={classes.mainNav}>
           <li>
-            <Link to="/#about" className={classes.navLinks} >
+            <Link to="/#about" className={classes.navLinks}>
               ABOUT
             </Link>
           </li>

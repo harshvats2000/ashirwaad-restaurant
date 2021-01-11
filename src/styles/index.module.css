@@ -36,6 +36,7 @@
   word-spacing: 0.25rem;
   font-weight: bold;
   color: white;
+  cursor: pointer;
 }
 
 @media only screen and (max-width: 1200px) {
@@ -180,8 +181,7 @@
   top: calc(var(--width) / -2);
   position: absolute;
   z-index: -1;
-  box-shadow: 0 0 70px var(--color-icon);
-  border-radius: 50%;
+  filter: drop-shadow(0 0 70px var(--color-icon));
   -webkit-animation: spin 15s linear infinite;
   -moz-animation: spin 15s linear infinite;
   animation: spin 15s linear infinite;
@@ -449,6 +449,435 @@
 
   .MenuTabPanelImgContent p:nth-of-type(2) {
     bottom: 30px;
+  }
+}
+
+/* RESERVATION SECTION */
+
+.ReservationSection {
+  background-color: yellow;
+  overflow-x: hidden;
+  padding: 120px 0;
+}
+
+.Reservation {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 80px 0;
+  max-width: 1000px;
+  margin: auto;
+  background-color: white;
+  box-shadow: 0 0 70px var(--color-icon);
+  border-radius: 4px;
+}
+
+.Reservation h1 {
+  position: relative;
+  font-size: 4rem;
+  font-family: "Dancing Script";
+  margin-bottom: 40px;
+  color: var(--color-icon);
+}
+
+.Reservation h1::before {
+  position: absolute;
+  content: "";
+  height: 2px;
+  width: 120px;
+  left: -150px;
+  top: 50%;
+  background-color: var(--color-icon);
+}
+
+.Reservation h1::after {
+  position: absolute;
+  content: "";
+  height: 2px;
+  width: 120px;
+  right: -150px;
+  top: 50%;
+  background-color: var(--color-icon);
+}
+
+.TomatoImg {
+  position: absolute;
+  left: -100px;
+  top: 100px;
+  z-index: 15;
+  width: 200px;
+  filter: drop-shadow(0 0 70px var(--color-icon));
+}
+
+.LemonImg {
+  position: absolute;
+  right: -75px;
+  bottom: 50px;
+  z-index: 15;
+  width: 150px;
+  border-radius: 50%;
+  filter: drop-shadow(0 0 70px var(--color-icon));
+}
+
+.FormContainer {
+  position: relative;
+}
+
+.Form {
+  position: absolute;
+  left: 180px;
+  top: 130px;
+  display: flex;
+  flex-direction: column;
+  width: 240px;
+  margin: auto;
+}
+
+.Form input {
+  padding: 10px;
+  font-family: "Roboto";
+  margin-bottom: 40px;
+  outline: none;
+  border: 2px solid var(--color-icon);
+  border-radius: 8px;
+  font-size: 1.5rem;
+  color: var(--color-icon);
+  cursor: pointer;
+}
+
+.InputGroupIcon {
+  width: 30px;
+  position: absolute;
+  right: 15px;
+  top: 210px;
+}
+
+.InputPhoneIcon {
+  width: 30px;
+  position: absolute;
+  right: 15px;
+  top: 307px;
+}
+
+.ReservationSubmit {
+  cursor: pointer;
+  width: 40px;
+  position: absolute;
+  left: 275px;
+  top: 535px;
+  filter: drop-shadow(1px 3px 1px var(--color-icon));
+  transition: 0.3s ease filter;
+}
+
+.SmartPhoneImg {
+  z-index: -1;
+  height: 600px;
+}
+
+@media only screen and (max-width: 1200px) {
+  .ReservationSection {
+    padding: 80px 0;
+  }
+
+  .Reservation {
+    padding: 60px 0;
+    max-width: 800px;
+  }
+
+  .Reservation h1 {
+    font-size: 3rem;
+  }
+
+  .Reservation h1::before {
+    width: 80px;
+    left: -100px;
+  }
+
+  .Reservation h1::after {
+    width: 80px;
+    right: -100px;
+  }
+
+  .TomatoImg {
+    left: -80px;
+    top: 80px;
+    width: 150px;
+  }
+
+  .LemonImg {
+    right: -60px;
+    bottom: 30px;
+    width: 120px;
+  }
+}
+
+@media only screen and (max-width: 900px) {
+  .ReservationSection {
+    padding: 60px 0;
+  }
+
+  .Reservation {
+    width: 80%;
+  }
+
+  .Reservation h1 {
+    font-size: 1.75rem;
+  }
+
+  .Reservation h1::before {
+    width: 60px;
+    left: -80px;
+  }
+
+  .Reservation h1::after {
+    width: 60px;
+    right: -80px;
+  }
+
+  .TomatoImg {
+    left: -60px;
+    top: 60px;
+    width: 120px;
+  }
+
+  .LemonImg {
+    right: -40px;
+    bottom: 20px;
+    width: 80px;
+  }
+
+  .Form {
+    left: 135px;
+    top: 100px;
+    width: 180px;
+  }
+
+  .Form input {
+    padding: 8px;
+    margin-bottom: 20px;
+    border: 2px solid var(--color-icon);
+    font-size: 1rem;
+  }
+
+  .InputGroupIcon {
+    width: 20px;
+    top: 148px;
+  }
+
+  .InputPhoneIcon {
+    width: 20px;
+    top: 215px;
+  }
+
+  .ReservationSubmit {
+    width: 32px;
+    left: 205px;
+    top: 399px;
+  }
+
+  .SmartPhoneImg {
+    height: 450px;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .Reservation {
+    width: 80%;
+    padding: 40px 0px 20px 0px;
+  }
+
+  .Reservation h1 {
+    font-size: 1rem;
+    margin-bottom: 20px;
+  }
+
+  .Reservation h1::before {
+    height: 1.5px;
+    width: 40px;
+    left: -50px;
+  }
+
+  .Reservation h1::after {
+    height: 1.5px;
+    width: 40px;
+    right: -50px;
+  }
+
+  .TomatoImg {
+    left: -40px;
+    top: 40px;
+    width: 80px;
+  }
+
+  .LemonImg {
+    right: -30px;
+    bottom: 20px;
+    width: 60px;
+  }
+
+  .Form {
+    left: 81px;
+    top: 65px;
+    width: 120px;
+  }
+
+  .Form input {
+    padding: 2px 4px;
+    margin-bottom: 5px;
+    border: 1px solid var(--color-icon);
+    font-size: 0.8rem;
+    border-radius: 4px;
+  }
+
+  .InputPhoneIcon {
+    width: 12px;
+    top: 115px;
+    right: 8px;
+  }
+
+  .InputGroupIcon {
+    width: 12px;
+    top: 80px;
+    right: 8px;
+  }
+
+  .ReservationSubmit {
+    width: 22px;
+    left: 127px;
+    top: 247px;
+  }
+
+  .SmartPhoneImg {
+    height: 280px;
+  }
+}
+/* Gallery section */
+
+.Gallery {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 120px 0px;
+  background-color: var(--color-icon);
+}
+
+.Gallery h1 {
+  color: var(--color-text-primary);
+  font-size: 4rem;
+  font-family: "Dancing Script";
+  margin-bottom: 60px;
+}
+
+.Images {
+  position: relative;
+}
+
+.Image {
+  max-width: 1200px;
+  width: 80vw;
+  height: 80vh;
+  border-radius: 10px;
+}
+
+.RightArrow {
+  width: 80px;
+  opacity: 0.8;
+  position: absolute;
+  top: 45%;
+  right: 0;
+  z-index: 10;
+  cursor: pointer;
+}
+
+.LeftArrow {
+  width: 80px;
+  transform: rotate(180deg);
+  opacity: 0.8;
+  position: absolute;
+  top: 45%;
+  left: 0;
+  z-index: 10;
+  cursor: pointer;
+}
+
+.Slide {
+  opacity: 0;
+  transition-duration: 1s ease;
+}
+
+.Slide.Active {
+  opacity: 1;
+  transition-duration: 1s;
+  transform: scale(1.08);
+}
+
+@media only screen and (max-width: 1200px) {
+  .Gallery {
+    padding: 80px 0px;
+  }
+
+  .Gallery h1 {
+    font-size: 3rem;
+    margin-bottom: 40px;
+  }
+
+  .Image {
+    width: 80vw;
+    height: 80vh;
+    border-radius: 10px;
+  }
+
+  .LeftArrow {
+    width: 60px;
+  }
+
+  .RightArrow {
+    width: 60px;
+  }
+}
+
+@media only screen and (max-width: 900px) {
+  .Gallery {
+    padding: 60px 0px;
+  }
+
+  .Gallery h1 {
+    font-size: 2rem;
+    margin-bottom: 30px;
+  }
+
+  .Image {
+    width: 80vw;
+    height: 60vh;
+    border-radius: 10px;
+  }
+
+  .LeftArrow {
+    width: 30px;
+  }
+
+  .RightArrow {
+    width: 30px;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .Gallery {
+    padding: 60px 0px;
+  }
+
+  .Gallery h1 {
+    font-size: 1.5rem;
+    margin-bottom: 40px;
+  }
+
+  .Image {
+    width: 90vw;
+    height: 50vh;
+    border-radius: 10px;
   }
 }
 

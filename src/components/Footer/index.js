@@ -9,7 +9,7 @@ const footer = () => {
                 Copyright &copy; Ashirwaad Restraunt Inc. All rights reserved
             </p>
             <p>
-                Made by <a href="www.digivats.com" > DigiVats </a>
+                Made by <a href="//www.digivats.com"  target="_blank"> DigiVats </a>
             </p>
         </div>
     )
