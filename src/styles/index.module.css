@@ -3,6 +3,7 @@
   background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
     url("../../content/banner/banner.jpg");
   background-size: cover;
+  background-position: center;
 }
 .BannerContent {
   position: absolute;
@@ -42,9 +43,6 @@
 @media only screen and (max-width: 1200px) {
   .BannerContent h1 {
     font-size: 4rem;
-  }
-  .BannerContent p {
-    font-size: 2rem;
   }
   .BannerContent button {
     font-size: 1.75rem;
