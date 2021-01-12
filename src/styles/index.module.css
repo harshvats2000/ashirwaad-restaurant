@@ -158,6 +158,7 @@
   flex-direction: column;
   align-items: center;
   background-color: rgba(0, 0, 0, 0.2);
+  overflow-x: hidden;
 }
 
 .MenuTitle > h1 {
@@ -209,6 +210,7 @@
 .MenuTabList {
   display: flex;
   align-self: center;
+  margin: 0;
   margin-bottom: 60px;
 }
 
@@ -217,6 +219,7 @@
   flex-direction: column;
   align-items: center;
   width: 180px;
+  outline: none;
   padding: 20px 0 40px 0;
   color: var(--color-icon);
   border-radius: 8px;
@@ -251,9 +254,13 @@
   max-width: 1200px;
 }
 
+.MenuTabPanel:nth-of-type(2) {
+  width: 110%;
+  margin-left: -5%;
+}
+
 .MenuTabPanel > div {
   position: relative;
-  padding-right: 20px;
 }
 
 .MenuImage {
@@ -414,6 +421,11 @@
     max-width: 480px;
   }
 
+  .MenuTabPanel:nth-of-type(2) {
+    width: 105%;
+    margin-left: -2.5%;
+  }
+
   .MenuImage {
     margin-bottom: 15px;
     height: 140px;
@@ -531,14 +543,18 @@
   top: 130px;
   display: flex;
   flex-direction: column;
-  width: 240px;
   margin: auto;
 }
 
-.Form input {
-  padding: 10px;
-  font-family: "Roboto";
+.Input {
   margin-bottom: 40px;
+  position: relative;
+}
+
+.Form > div > input {
+  padding: 10px;
+  width: 240px;
+  font-family: "Roboto";
   outline: none;
   border: 2px solid var(--color-icon);
   border-radius: 8px;
@@ -547,18 +563,54 @@
   cursor: pointer;
 }
 
-.InputGroupIcon {
-  width: 30px;
-  position: absolute;
-  right: 15px;
-  top: 210px;
+.DatePicker {
+  width: 240px;
+  font-size: 1.5rem;
+  font-family: "Roboto";
+  border-radius: 8px;
+  border: 2px solid var(--color-icon);
+  padding: 10px;
+  outline: none;
 }
 
-.InputPhoneIcon {
+.DatePickerLabel > div:nth-of-type(2) {
+  display: none;
+}
+
+.TimePicker {
+  width: 240px;
+  font-size: 1.5rem;
+  font-family: "Roboto";
+}
+
+.TimePicker > div input {
+  margin-right: 10px;
+  outline: none;
+}
+
+.TimePicker select {
+  outline: none;
+}
+
+.TimePicker > div {
+  padding: 10px;
+  border: 2px solid var(--color-icon);
+  border-radius: 8px;
+}
+
+.TimePicker button:nth-of-type(1) {
+  display: none;
+}
+
+.TimePicker button {
+  outline: none;
+}
+
+.InputIcon {
   width: 30px;
   position: absolute;
   right: 15px;
-  top: 307px;
+  top: 10px;
 }
 
 .ReservationSubmit {
@@ -651,24 +703,41 @@
   .Form {
     left: 135px;
     top: 100px;
-    width: 180px;
   }
 
-  .Form input {
-    padding: 8px;
+  .Input {
     margin-bottom: 20px;
-    border: 2px solid var(--color-icon);
+  }
+
+  .Form > div > input {
+    padding: 8px;
+    width: 180px;
     font-size: 1rem;
   }
 
-  .InputGroupIcon {
-    width: 20px;
-    top: 148px;
+  .DatePicker {
+    width: 180px;
+    font-size: 1rem;
+    padding: 8px;
   }
 
-  .InputPhoneIcon {
+  .TimePicker {
+    width: 180px;
+    font-size: 1rem;
+  }
+
+  .TimePicker > div input {
+    margin-right: 5px;
+  }
+
+  .TimePicker > div {
+    padding: 8px;
+  }
+
+  .InputIcon {
     width: 20px;
-    top: 215px;
+    right: 10px;
+    top: 10px;
   }
 
   .ReservationSubmit {
@@ -723,23 +792,43 @@
     width: 120px;
   }
 
-  .Form input {
-    padding: 2px 4px;
+  .Input {
     margin-bottom: 5px;
-    border: 1px solid var(--color-icon);
+  }
+
+  .Form > div > input {
+    padding: 2px 4px;
+    width: 120px;
     font-size: 0.8rem;
+    border: 1px solid var(--color-icon);
     border-radius: 4px;
   }
 
-  .InputPhoneIcon {
-    width: 12px;
-    top: 115px;
-    right: 8px;
+  .DatePicker {
+    width: 120px;
+    font-size: 0.8rem;
+    padding: 2px 4px;
+    border-width: 1px;
+    border-radius: 4px;
   }
 
-  .InputGroupIcon {
+  .TimePicker {
+    width: 120px;
+    font-size: 0.8rem;
+  }
+
+  .TimePicker > div input {
+    margin-right: 1px;
+  }
+
+  .TimePicker > div {
+    padding: 2px 4px;
+    border-width: 1px;
+    border-radius: 4px;
+  }
+
+  .InputIcon {
     width: 12px;
-    top: 80px;
     right: 8px;
   }
 
@@ -846,7 +935,30 @@
 
   .Gallery h1 {
     font-size: 2rem;
-    margin-bottom: 30px;
+    margin-bottom: 40px;
+    position: relative;
+  }
+
+  .Gallery h1::before {
+    content: "";
+    position: absolute;
+    left: -20px;
+    top: 40%;
+    height: 8px;
+    width: 8px;
+    border-radius: 50%;
+    background-color: var(--color-text-primary);
+  }
+
+  .Gallery h1::after {
+    content: "";
+    position: absolute;
+    right: -20px;
+    top: 40%;
+    height: 8px;
+    width: 8px;
+    border-radius: 50%;
+    background-color: var(--color-text-primary);
   }
 
   .Image {
@@ -866,18 +978,12 @@
 
 @media only screen and (max-width: 600px) {
   .Gallery {
-    padding: 60px 0px;
-  }
-
-  .Gallery h1 {
-    font-size: 1.5rem;
-    margin-bottom: 40px;
+    padding: 30px 0px 60px 0px;
   }
 
   .Image {
-    width: 90vw;
     height: 50vh;
-    border-radius: 10px;
+    border-radius: 4px;
   }
 }
 
