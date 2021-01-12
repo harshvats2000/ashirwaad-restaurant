@@ -249,11 +249,11 @@
   flex-wrap: wrap;
   justify-content: space-evenly;
   max-width: 1200px;
-  margin-bottom: 120px;
 }
 
 .MenuTabPanel > div {
   position: relative;
+  padding-right: 20px;
 }
 
 .MenuImage {
@@ -261,7 +261,6 @@
   box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1),
     0 4px 6px -2px rgba(0, 0, 0, 0.05);
   border-radius: 8px;
-  height: 340px;
   width: 340px;
 }
 
@@ -295,6 +294,8 @@
   left: 50%;
   top: 15px;
   z-index: 10;
+  width: 100%;
+  text-align: center;
 }
 
 .MenuTabPanelImgContent p:nth-of-type(2) {
@@ -302,6 +303,8 @@
   left: 50%;
   bottom: 60px;
   z-index: 10;
+  width: 100%;
+  text-align: center;
 }
 
 @media only screen and (max-width: 1200px) {
@@ -372,7 +375,6 @@
 
   .MenuTabPanel {
     max-width: 700px;
-    margin-bottom: 40px;
   }
 
   .MenuImage {

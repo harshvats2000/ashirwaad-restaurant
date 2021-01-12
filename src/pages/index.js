@@ -39,6 +39,16 @@ const IndexPage = props => {
     return null
   }
 
+  let breakfast = data.menu.edges.filter(menu =>
+    menu.node.frontmatter.category.includes("breakfast")
+  )
+  let lunch = data.menu.edges.filter(menu =>
+    menu.node.frontmatter.category.includes("lunch")
+  )
+  let dinner = data.menu.edges.filter(menu =>
+    menu.node.frontmatter.category.includes("dinner")
+  )
+
   return (
     <Layout>
       <SEO title="Home" />
@@ -107,7 +117,7 @@ const IndexPage = props => {
             </Tab>
           </TabList>
           <TabPanel className={classes.MenuTabPanel}>
-            {data.menu.edges.map((menu, i) => (
+            {breakfast.map((menu, i) => (
               <div key={i}>
                 <Img
                   className={classes.MenuImage}
@@ -121,8 +131,36 @@ const IndexPage = props => {
               </div>
             ))}
           </TabPanel>
-          <TabPanel>Hi</TabPanel>
-          <TabPanel>World</TabPanel>
+          <TabPanel className={classes.MenuTabPanel}>
+            {lunch.map((menu, i) => (
+              <div key={i}>
+                <Img
+                  className={classes.MenuImage}
+                  fluid={menu.node.frontmatter.image.childImageSharp.fluid}
+                  alt={menu.node.frontmatter.title}
+                />
+                <div className={classes.MenuTabPanelImgContent}>
+                  <p>{menu.node.frontmatter.title}</p>
+                  <p>₹ {menu.node.frontmatter.price} </p>
+                </div>
+              </div>
+            ))}
+          </TabPanel>
+          <TabPanel className={classes.MenuTabPanel}>
+            {dinner.map((menu, i) => (
+              <div key={i}>
+                <Img
+                  className={classes.MenuImage}
+                  fluid={menu.node.frontmatter.image.childImageSharp.fluid}
+                  alt={menu.node.frontmatter.title}
+                />
+                <div className={classes.MenuTabPanelImgContent}>
+                  <p>{menu.node.frontmatter.title}</p>
+                  <p>₹ {menu.node.frontmatter.price} </p>
+                </div>
+              </div>
+            ))}
+          </TabPanel>
         </Tabs>
       </div>
 

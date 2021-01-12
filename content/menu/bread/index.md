@@ -1,7 +1,7 @@
 ---
-title: "tea"
-category: "breakfast"
-description: "Be Indian. Be Chai lover."
-price: 50
-image: ./tea.jpeg
+title: "Bread"
+category: ["breakfast"]
+description: "Totally Fresh breads."
+price: 30
+image: ./bread.jpeg
 ---

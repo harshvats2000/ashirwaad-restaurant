@@ -19,10 +19,10 @@ collections:
       - label: "Category"
         name: "category"
         widget: "select"
+        multiple: true
         options:
           - { label: "Breakfast", value: "breakfast" }
           - { label: "Lunch", value: "lunch" }
-          - { label: "Snacks", value: "snacks" }
           - { label: "Dinner", value: "dinner" }
       - { label: "Name", name: "title", widget: "string" }
       - { label: "Image", name: "image", widget: "image" }
