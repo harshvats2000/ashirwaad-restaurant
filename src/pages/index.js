@@ -21,10 +21,16 @@ import SubmitSvg from "../images/telegram.svg"
 import arrow from "../images/arrow.svg"
 import phoneCall from "../images/phone-call.svg"
 import group from "../images/group.svg"
+import calendar from "../images/calendar.svg"
+import clock from "../images/clock.svg"
+import TimePicker from "react-time-picker"
+import DatePicker from "react-datepicker"
 
 const IndexPage = props => {
   const { data } = props
   const [current, setCurrent] = useState(0)
+  const [startDate, setStartDate] = useState(new Date())
+  const [time, setTime] = useState("12:00")
   const length = data.gallery.edges.length
 
   const nextSlide = () => {
@@ -184,12 +190,33 @@ const IndexPage = props => {
           <div className={classes.FormContainer}>
             <img src={SmartphoneSvg} className={classes.SmartPhoneImg} />
             <form className={classes.Form}>
-              <input type="date" />
-              <input type="time" />
-              <input placeholder="No. Of Seats" type="number" />
-              <img src={group} className={classes.InputGroupIcon} />
-              <input placeholder="Mobile No." type="tel" />
-              <img src={phoneCall} className={classes.InputPhoneIcon} />
+              <div className={classes.Input}>
+                <label className={classes.DatePickerLabel}>
+                  <DatePicker
+                    selected={startDate}
+                    onChange={date => setStartDate(date)}
+                    className={classes.DatePicker}
+                  />
+                </label>
+                <img src={calendar} className={classes.InputIcon} />
+              </div>
+              <div className={classes.Input}>
+                <TimePicker
+                  value={time}
+                  className={classes.TimePicker}
+                  disableClock
+                  onChange={e => setTimeout(e)}
+                />
+                <img src={clock} className={classes.InputIcon} />
+              </div>
+              <div className={classes.Input}>
+                <input placeholder="No. Of Seats" type="number" />
+                <img src={group} className={classes.InputIcon} />
+              </div>
+              <div className={classes.Input}>
+                <input placeholder="Mobile No." type="tel" />
+                <img src={phoneCall} className={classes.InputIcon} />
+              </div>
             </form>
             <img
               src={SubmitSvg}
@@ -265,7 +292,7 @@ const IndexPage = props => {
                 </div>
                 <div>
                   <AddressSvg />
-                  <p>Ashirwaad Hotel, Ganpati Nagar, Haryana</p>
+                  <p>Ashirwaad Hotel, Sec-16, Faridabad, Haryana</p>
                 </div>
               </div>
             </div>
