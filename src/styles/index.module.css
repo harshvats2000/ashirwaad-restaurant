@@ -560,7 +560,6 @@
   border-radius: 8px;
   font-size: 1.5rem;
   color: var(--color-icon);
-  cursor: pointer;
 }
 
 .DatePicker {
@@ -1094,7 +1093,7 @@
 
   .ContactIcon div p {
     font-size: 1rem;
-    line-height: 1rem;
+    line-height: 1.4rem;
   }
 }
 

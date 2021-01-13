@@ -30,6 +30,7 @@ const IndexPage = props => {
   const { data } = props
   const [current, setCurrent] = useState(0)
   const [startDate, setStartDate] = useState(new Date())
+  const [time, setTime] = useState("12:00")
   const length = data.gallery.edges.length
 
   const nextSlide = () => {
@@ -201,9 +202,10 @@ const IndexPage = props => {
               </div>
               <div className={classes.Input}>
                 <TimePicker
-                  value="18:22"
+                  value={time}
                   className={classes.TimePicker}
                   disableClock
+                  onChange={e => setTimeout(e)}
                 />
                 <img src={clock} className={classes.InputIcon} />
               </div>
@@ -290,7 +292,7 @@ const IndexPage = props => {
                 </div>
                 <div>
                   <AddressSvg />
-                  <p>Ashirwaad Hotel, Ganpati Nagar, Haryana</p>
+                  <p>Ashirwaad Hotel, Sec-16, Faridabad, Haryana</p>
                 </div>
               </div>
             </div>
