@@ -935,29 +935,6 @@
   .Gallery h1 {
     font-size: 2rem;
     margin-bottom: 40px;
-    position: relative;
-  }
-
-  .Gallery h1::before {
-    content: "";
-    position: absolute;
-    left: -20px;
-    top: 40%;
-    height: 8px;
-    width: 8px;
-    border-radius: 50%;
-    background-color: var(--color-text-primary);
-  }
-
-  .Gallery h1::after {
-    content: "";
-    position: absolute;
-    right: -20px;
-    top: 40%;
-    height: 8px;
-    width: 8px;
-    border-radius: 50%;
-    background-color: var(--color-text-primary);
   }
 
   .Image {
@@ -997,7 +974,6 @@
   max-width: 1400px;
   margin: auto;
   align-items: center;
-  height: 100vh;
 }
 
 .Map {
@@ -1051,11 +1027,6 @@
 }
 
 @media only screen and (max-width: 1200px) {
-  .Contact {
-    max-width: 950px;
-    height: fit-content;
-  }
-
   .ContactContent {
     padding: 0px 40px;
   }
@@ -1075,10 +1046,6 @@
 }
 
 @media only screen and (max-width: 900px) {
-  .Contact {
-    max-width: 600px;
-  }
-
   .ContactContent {
     padding: 0px 30px;
   }
