@@ -8,9 +8,9 @@ const footer = () => {
             <p>
                 Copyright &copy; Ashirwaad Restraunt Inc. All rights reserved
             </p>
-            <p>
+            {/* <p>
                 Made by <a href="//www.digivats.com"  target="_blank"> DigiVats </a>
-            </p>
+            </p> */}
         </div>
     )
 }
