@@ -1,6 +1,6 @@
 .Header {
   position: fixed;
-  width: 100%;
+  width: 100vw;
   z-index: 999;
   transition: 1s;
 }
@@ -10,6 +10,8 @@
   height: 60px;
   display: flex;
   align-items: center;
+  max-width: 1200px;
+  margin: auto;
 }
 
 .mainNav {
@@ -27,10 +29,9 @@
 
 .logo {
   text-decoration: none;
-  color: var(--color-text-main);
+  color: white;
   font-family: "Dancing Script";
   font-weight: 800;
-  font-size: 1.25rem;
   display: inline-block;
   font-size: 22px;
   margin-left: 20px;
@@ -39,8 +40,6 @@
 .navLinks {
   text-decoration: none;
   color: var(--color-text-primary);
-  font-family: "Roboto";
-  font-size: 1.25rem;
 }
 
 .navLinks:hover {
@@ -70,7 +69,7 @@
   height: 4px;
   border-radius: 2px;
   background-color: white;
-  transition: 0.5s;
+  transition: 0.2s;
 }
 
 .navbarToggle div span:nth-of-type(2) {

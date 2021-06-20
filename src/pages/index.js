@@ -3,12 +3,9 @@ import { useState } from "react"
 import { graphql } from "gatsby"
 import Img from "gatsby-image"
 import { Link } from "gatsby"
-
 import { Tab, Tabs, TabPanel, TabList } from "react-tabs"
-
 import Layout from "../components/layout"
 import SEO from "../components/seo"
-
 import classes from "../styles/index.module.css"
 import BreakfastSvg from "../components/MenuSvg/breakfast.js"
 import LunchSvg from "../components/MenuSvg/lunch.js"
@@ -25,25 +22,13 @@ import calendar from "../images/calendar.svg"
 import clock from "../images/clock.svg"
 import TimePicker from "react-time-picker"
 import DatePicker from "react-datepicker"
+import Gallery from "../components/Gallery"
 
 const IndexPage = props => {
   const { data } = props
   const [current, setCurrent] = useState(0)
   const [startDate, setStartDate] = useState(new Date())
   const [time, setTime] = useState("12:00")
-  const length = data.gallery.edges.length
-
-  const nextSlide = () => {
-    setCurrent(current === length - 1 ? 0 : current + 1)
-  }
-
-  const prevSlide = () => {
-    setCurrent(current === 0 ? length - 1 : current - 1)
-  }
-
-  if (!Array.isArray(data.gallery.edges) || data.gallery.edges.length <= 0) {
-    return null
-  }
 
   let breakfast = data.menu.edges.filter(menu =>
     menu.node.frontmatter.category.includes("breakfast")
@@ -61,7 +46,7 @@ const IndexPage = props => {
 
       {/* BANNER SECTION */}
 
-      <div className={classes.Banner} id="banner">
+      <section className={classes.Banner} id="banner">
         <div className={classes.BannerContent}>
           <h1>ASHIRWAAD</h1>
           <p>
@@ -75,11 +60,11 @@ const IndexPage = props => {
             <button>BOOK A TABLE</button>
           </Link>
         </div>
-      </div>
+      </section>
 
       {/* ABOUT SECTION */}
 
-      <div className={classes.About} id="about">
+      <section className={classes.About} id="about">
         <div className={classes.AboutContent}>
           <h1>About Us</h1>
           <p>
@@ -90,7 +75,7 @@ const IndexPage = props => {
             consequat. Duis autem vel eum iriure dolor in
           </p>
         </div>
-      </div>
+      </section>
 
       {/* OUR MENU SECTION */}
 
@@ -237,31 +222,7 @@ const IndexPage = props => {
 
       {/* GALLERY SECTION */}
 
-      <div className={classes.Gallery} id="gallery">
-        <h1>Our Gallery</h1>
-        <div className={classes.Images}>
-          <img src={arrow} className={classes.LeftArrow} onClick={prevSlide} />
-          <img src={arrow} className={classes.RightArrow} onClick={nextSlide} />
-          {data.gallery.edges.map((pic, index) => (
-            <div
-              className={
-                index === current
-                  ? `${classes.Slide} ${classes.Active}`
-                  : `${classes.Slide}`
-              }
-              key={index}
-            >
-              {index === current && (
-                <Img
-                  className={classes.Image}
-                  fluid={pic.node.frontmatter.image.childImageSharp.fluid}
-                  alt={pic.node.frontmatter.title}
-                />
-              )}
-            </div>
-          ))}
-        </div>
-      </div>
+      <Gallery />
 
       {/* CONTACT SECTION */}
 
@@ -318,24 +279,6 @@ export const menuQuery = graphql`
             image {
               childImageSharp {
                 fluid(maxWidth: 340, maxHeight: 340) {
-                  ...GatsbyImageSharpFluid
-                }
-              }
-            }
-          }
-        }
-      }
-    }
-    gallery: allMarkdownRemark(
-      filter: { fileAbsolutePath: { regex: "/(gallery)/" } }
-    ) {
-      edges {
-        node {
-          frontmatter {
-            title
-            image {
-              childImageSharp {
-                fluid(maxWidth: 1200) {
                   ...GatsbyImageSharpFluid
                 }
               }

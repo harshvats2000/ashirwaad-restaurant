@@ -9,13 +9,12 @@
 .Root hr {
   background-color: var(--color-text-primary);
   width: 1100px;
-  height: 3px;
+  height: 2px;
 }
 
 .Root p {
-  font-size: 1.45rem;
+  font-size: 1.15rem;
   color: var(--color-text-primary);
-  font-family: "Roboto";
   margin: 20px auto;
 }
 

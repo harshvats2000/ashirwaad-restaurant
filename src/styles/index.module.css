@@ -1,6 +1,6 @@
 .Banner {
   height: 120vh;
-  background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
     url("../../content/banner/banner.jpg");
   background-size: cover;
   background-position: center;
@@ -12,42 +12,34 @@
 }
 .BannerContent h1 {
   color: var(--color-text-main);
-  font-size: 6rem;
+  font-size: 5rem;
+  letter-spacing: 5px;
   margin: 0;
-  font-family: "Dancing Script";
   font-weight: 800;
 }
 .BannerContent p {
-  font-family: "Roboto";
   color: var(--color-text-primary);
-  font-size: 1.75rem;
+  font-family: "Dancing Script";
+  font-size: 1.6rem;
+  line-height: 2rem;
   margin: 20px 0 40px 0px;
-  line-height: 3rem;
-  max-width: 50%;
+  max-width: 500px;
 }
 .BannerContent button {
   background-color: var(--color-bg-dark);
-  padding: 20px 40px;
-  font-size: 2rem;
-  outline: none;
+  font-size: 1.2rem;
   border: none;
-  border-radius: 10px;
-  font-family: "Roboto";
-  letter-spacing: 0.075rem;
-  word-spacing: 0.25rem;
+  padding: 10px 30px;
+  letter-spacing: 2px;
   font-weight: bold;
   color: white;
   cursor: pointer;
+  clip-path: polygon(0% 0, 90% 0, 100% 100%, 10% 100%);
+  transition: 0.3s;
 }
 
-@media only screen and (max-width: 1200px) {
-  .BannerContent h1 {
-    font-size: 4rem;
-  }
-  .BannerContent button {
-    font-size: 1.75rem;
-    padding: 15px 30px;
-  }
+.BannerContent button:hover {
+  clip-path: polygon(10% 0, 100% 0, 90% 100%, 0 100%);
 }
 
 @media only screen and (max-width: 900px) {
@@ -57,29 +49,22 @@
   .BannerContent h1 {
     font-size: 4rem;
   }
-  .BannerContent p {
-    margin: 40px 0px;
-    font-size: 1.25rem;
-    line-height: 1.5rem;
-    max-width: 60%;
-  }
   .BannerContent button {
-    font-size: 1.25rem;
+    font-size: 1rem;
     word-spacing: unset;
-    padding: 8px 20px;
-    border-radius: 5px;
   }
 }
 
 @media only screen and (max-width: 600px) {
   .BannerContent h1 {
-    font-size: 3rem;
+    font-size: 2.5rem;
+    letter-spacing: 3px;
   }
   .BannerContent p {
     margin: 20px 0px;
-    max-width: 70%;
-    font-size: 1rem;
-    line-height: 1.25rem;
+    max-width: 80%;
+    font-size: 1.2rem;
+    line-height: 1.45rem;
   }
 }
 
@@ -89,6 +74,7 @@
   background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
     url("../../content/about/about.jpg");
   background-size: cover;
+  min-height: 100vh;
 }
 .AboutContent {
   padding: 150px 100px;
@@ -101,20 +87,16 @@
 }
 .AboutContent p {
   margin-left: 40%;
-  width: 60%;
-  font-family: "Roboto";
+  max-width: 600px;
+  font-family: "Dancing Script";
   color: var(--color-text-primary);
-  font-size: 1.75rem;
-  line-height: 3rem;
+  font-size: 1.6rem;
+  line-height: 2rem;
 }
 
 @media only screen and (max-width: 1200px) {
   .AboutContent h1 {
     font-size: 4rem;
-  }
-  .AboutContent p {
-    font-size: 1.5rem;
-    line-height: 2.5rem;
   }
 }
 
@@ -128,13 +110,6 @@
   .AboutContent h1 {
     font-size: 5rem;
   }
-  .AboutContent p {
-    margin-left: 30%;
-    margin-top: 10%;
-    width: 70%;
-    font-size: 1.25rem;
-    line-height: 1.5rem;
-  }
 }
 
 @media only screen and (max-width: 600px) {
@@ -146,8 +121,9 @@
   }
   .AboutContent p {
     margin-top: 10%;
-    font-size: 1rem;
-    line-height: 1.25rem;
+    margin-left: 10%;
+    font-size: 1.2rem;
+    line-height: 1.45rem;
   }
 }
 
@@ -239,7 +215,6 @@
 
 .MenuTab p {
   font-size: 2rem;
-  font-family: "Roboto";
 }
 
 .MenuTab:nth-of-type(2) {
@@ -287,7 +262,6 @@
 }
 
 .MenuTabPanelImgContent p {
-  font-family: "Roboto";
   text-transform: capitalize;
   font-size: 2rem;
   transform: translate(-50%, 50%);
@@ -554,7 +528,7 @@
 .Form > div > input {
   padding: 10px;
   width: 240px;
-  font-family: "Roboto";
+
   outline: none;
   border: 2px solid var(--color-icon);
   border-radius: 8px;
@@ -565,7 +539,7 @@
 .DatePicker {
   width: 240px;
   font-size: 1.5rem;
-  font-family: "Roboto";
+
   border-radius: 8px;
   border: 2px solid var(--color-icon);
   padding: 10px;
@@ -579,7 +553,6 @@
 .TimePicker {
   width: 240px;
   font-size: 1.5rem;
-  font-family: "Roboto";
 }
 
 .TimePicker > div input:nth-of-type(2) {
@@ -841,266 +814,58 @@
     height: 280px;
   }
 }
-/* Gallery section */
-
-.Gallery {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  padding: 120px 0px;
-  background-color: var(--color-icon);
-}
-
-.Gallery h1 {
-  color: var(--color-text-primary);
-  font-size: 4rem;
-  font-family: "Dancing Script";
-  margin-bottom: 60px;
-}
-
-.Images {
-  position: relative;
-}
-
-.Image {
-  max-width: 1200px;
-  width: 80vw;
-  height: 80vh;
-  border-radius: 10px;
-}
-
-.RightArrow {
-  width: 80px;
-  opacity: 0.8;
-  position: absolute;
-  top: 45%;
-  right: 0;
-  z-index: 10;
-  cursor: pointer;
-}
-
-.LeftArrow {
-  width: 80px;
-  transform: rotate(180deg);
-  opacity: 0.8;
-  position: absolute;
-  top: 45%;
-  left: 0;
-  z-index: 10;
-  cursor: pointer;
-}
-
-.Slide {
-  opacity: 0;
-  transition-duration: 1s ease;
-}
-
-.Slide.Active {
-  opacity: 1;
-  transition-duration: 1s;
-  transform: scale(1.08);
-}
-
-@media only screen and (max-width: 1200px) {
-  .Gallery {
-    padding: 80px 0px;
-  }
-
-  .Gallery h1 {
-    font-size: 3rem;
-    margin-bottom: 40px;
-  }
-
-  .Image {
-    width: 80vw;
-    height: 80vh;
-    border-radius: 10px;
-  }
-
-  .LeftArrow {
-    width: 60px;
-  }
-
-  .RightArrow {
-    width: 60px;
-  }
-}
-
-@media only screen and (max-width: 900px) {
-  .Gallery {
-    padding: 60px 0px;
-  }
-
-  .Gallery h1 {
-    font-size: 2rem;
-    margin-bottom: 40px;
-  }
-
-  .Image {
-    width: 80vw;
-    height: 60vh;
-    border-radius: 10px;
-  }
-
-  .LeftArrow {
-    width: 30px;
-  }
-
-  .RightArrow {
-    width: 30px;
-  }
-}
-
-@media only screen and (max-width: 600px) {
-  .Gallery {
-    padding: 30px 0px 60px 0px;
-  }
-
-  .Image {
-    height: 50vh;
-    border-radius: 4px;
-  }
-}
-
 /* Contact and Map section */
 
 .ContactSection {
   background-color: white;
+  padding: 0 15px;
 }
 
 .Contact {
   display: flex;
-  max-width: 1400px;
+  max-width: 1200px;
+  padding: 80px 0;
   margin: auto;
-  align-items: center;
 }
-
+.Contact > div {
+  flex: 1;
+}
 .Map {
-  width: 50%;
-}
-
-.ContactContent {
-  padding: 0px 60px;
+  margin-right: 50px;
+  height: 300px;
+  overflow: hidden;
 }
 
 .ContactContent h1 {
-  font-size: 4rem;
+  font-size: 3rem;
   margin-bottom: 60px;
   font-family: "Dancing Script";
-  text-align: center;
   color: var(--color-icon);
-  position: relative;
-}
-
-.ContactContent h1::before {
-  content: "";
-  position: absolute;
-  left: 3%;
-  top: 50%;
-  height: 2px;
-  width: 18%;
-  background-color: var(--color-icon);
-}
-.ContactContent h1::after {
-  content: "";
-  position: absolute;
-  right: 3%;
-  top: 50%;
-  height: 2px;
-  width: 18%;
-  background-color: var(--color-icon);
 }
 
 .ContactIcon div {
   display: flex;
   align-items: center;
-  margin: 15px 0px;
+  margin: 10px 0px;
 }
 
 .ContactIcon div p {
   margin: 0;
-  font-size: 1.75rem;
+  font-size: 1rem;
   line-height: 2rem;
-  font-family: "Roboto";
-  color: var(--color-icon);
 }
 
-@media only screen and (max-width: 1200px) {
-  .ContactContent {
-    padding: 0px 40px;
-  }
-
-  .ContactContent h1 {
-    font-size: 3rem;
-    margin-bottom: 0px;
-  }
-
-  .ContactIcon div {
-    margin: 10px 0px;
-  }
-
-  .ContactIcon div p {
-    font-size: 1.5rem;
-  }
-}
-
-@media only screen and (max-width: 900px) {
-  .ContactContent {
-    padding: 0px 30px;
-  }
-
-  .ContactContent h1 {
-    font-size: 2rem;
-  }
-
-  .ContactIcon div {
-    margin: 10px 0px;
-  }
-
-  .ContactIcon div p {
-    font-size: 1rem;
-    line-height: 1.4rem;
-  }
-}
-
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 768px) {
   .Contact {
     flex-direction: column;
-    width: 100%;
+    padding: 0;
+  }
+  .Contact h1 {
+    margin-bottom: 20px;
   }
 
   .Map {
     order: 2;
-    width: 100%;
-  }
-
-  .ContactContent {
-    height: 340px;
-    width: 100%;
-    padding-top: 60px;
-  }
-
-  .ContactContent h1 {
-    position: relative;
-  }
-
-  .ContactContent h1::before {
-    content: "";
-    position: absolute;
-    left: 5%;
-    top: 18px;
-    height: 2px;
-    width: 20%;
-    background-color: var(--color-icon);
-  }
-  .ContactContent h1::after {
-    content: "";
-    position: absolute;
-    right: 5%;
-    top: 18px;
-    height: 2px;
-    width: 20%;
-    background-color: var(--color-icon);
+    margin-right: 0;
   }
 }

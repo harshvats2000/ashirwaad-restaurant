@@ -6,5 +6,5 @@
 
 // You can delete this file if you're not using it
 
-import "typeface-roboto"
+import "typeface-lato"
 import "typeface-dancing-script"
