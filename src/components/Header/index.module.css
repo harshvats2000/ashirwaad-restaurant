@@ -115,7 +115,6 @@
     display: flex;
     flex-direction: row;
     margin: 0;
-    margin-right: 30px;
   }
 
   .mainNav li {

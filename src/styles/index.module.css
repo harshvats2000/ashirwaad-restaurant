@@ -1,73 +1,3 @@
-.Banner {
-  height: 120vh;
-  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
-    url("../../content/banner/banner.jpg");
-  background-size: cover;
-  background-position: center;
-}
-.BannerContent {
-  position: absolute;
-  top: 30%;
-  left: 5%;
-}
-.BannerContent h1 {
-  color: var(--color-text-main);
-  font-size: 5rem;
-  letter-spacing: 5px;
-  margin: 0;
-  font-weight: 800;
-}
-.BannerContent p {
-  color: var(--color-text-primary);
-  font-family: "Dancing Script";
-  font-size: 1.6rem;
-  line-height: 2rem;
-  margin: 20px 0 40px 0px;
-  max-width: 500px;
-}
-.BannerContent button {
-  background-color: var(--color-bg-dark);
-  font-size: 1.2rem;
-  border: none;
-  padding: 10px 30px;
-  letter-spacing: 2px;
-  font-weight: bold;
-  color: white;
-  cursor: pointer;
-  clip-path: polygon(0% 0, 90% 0, 100% 100%, 10% 100%);
-  transition: 0.3s;
-}
-
-.BannerContent button:hover {
-  clip-path: polygon(10% 0, 100% 0, 90% 100%, 0 100%);
-}
-
-@media only screen and (max-width: 900px) {
-  .Banner {
-    height: 100vh;
-  }
-  .BannerContent h1 {
-    font-size: 4rem;
-  }
-  .BannerContent button {
-    font-size: 1rem;
-    word-spacing: unset;
-  }
-}
-
-@media only screen and (max-width: 600px) {
-  .BannerContent h1 {
-    font-size: 2.5rem;
-    letter-spacing: 3px;
-  }
-  .BannerContent p {
-    margin: 20px 0px;
-    max-width: 80%;
-    font-size: 1.2rem;
-    line-height: 1.45rem;
-  }
-}
-
 /* about section */
 
 .About {
@@ -75,37 +5,29 @@
     url("../../content/about/about.jpg");
   background-size: cover;
   min-height: 100vh;
+  display: grid;
+  place-items: center;
 }
 .AboutContent {
-  padding: 150px 100px;
+  padding: 0 15px;
 }
 .AboutContent h1 {
   color: var(--color-text-main);
   font-size: 6rem;
-  font-family: "Dancing Script";
-  font-weight: 800;
+  text-shadow: 3px 3px 0px black;
 }
 .AboutContent p {
-  margin-left: 40%;
-  max-width: 600px;
+  max-width: 800px;
   font-family: "Dancing Script";
   color: var(--color-text-primary);
-  font-size: 1.6rem;
+  font-size: 1.8rem;
   line-height: 2rem;
-}
-
-@media only screen and (max-width: 1200px) {
-  .AboutContent h1 {
-    font-size: 4rem;
-  }
+  text-shadow: 1px 1px 0px black;
 }
 
 @media only screen and (max-width: 900px) {
   .About {
     height: 100vh;
-  }
-  .AboutContent {
-    padding: 20% 40px;
   }
   .AboutContent h1 {
     font-size: 5rem;
@@ -113,17 +35,12 @@
 }
 
 @media only screen and (max-width: 600px) {
-  .AboutContent {
-    padding: 40% 10px;
-  }
   .AboutContent h1 {
     font-size: 4rem;
   }
   .AboutContent p {
-    margin-top: 10%;
-    margin-left: 10%;
-    font-size: 1.2rem;
-    line-height: 1.45rem;
+    font-size: 1.4rem;
+    line-height: 1.8rem;
   }
 }
 
@@ -139,7 +56,7 @@
 
 .MenuTitle > h1 {
   font-family: "Dancing Script";
-  font-size: 6rem;
+  font-size: 5rem;
   text-align: center;
   margin: 60px auto;
 }
@@ -157,23 +74,10 @@
   position: absolute;
   z-index: -1;
   filter: drop-shadow(0 0 70px var(--color-icon));
-  -webkit-animation: spin 15s linear infinite;
-  -moz-animation: spin 15s linear infinite;
   animation: spin 15s linear infinite;
-}
-@-moz-keyframes spin {
-  100% {
-    -moz-transform: rotate(360deg);
-  }
-}
-@-webkit-keyframes spin {
-  100% {
-    -webkit-transform: rotate(360deg);
-  }
 }
 @keyframes spin {
   100% {
-    -webkit-transform: rotate(360deg);
     transform: rotate(360deg);
   }
 }

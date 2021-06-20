@@ -15,7 +15,6 @@ import MailSvg from "../components/ContactSvg/mail.js"
 import AddressSvg from "../components/ContactSvg/address.js"
 import SmartphoneSvg from "../images/smartphone.svg"
 import SubmitSvg from "../images/telegram.svg"
-import arrow from "../images/arrow.svg"
 import phoneCall from "../images/phone-call.svg"
 import group from "../images/group.svg"
 import calendar from "../images/calendar.svg"
@@ -23,10 +22,10 @@ import clock from "../images/clock.svg"
 import TimePicker from "react-time-picker"
 import DatePicker from "react-datepicker"
 import Gallery from "../components/Gallery"
+import HomepageBanner from "../components/HomepageBanner"
 
 const IndexPage = props => {
   const { data } = props
-  const [current, setCurrent] = useState(0)
   const [startDate, setStartDate] = useState(new Date())
   const [time, setTime] = useState("12:00")
 
@@ -45,22 +44,7 @@ const IndexPage = props => {
       <SEO title="Home" />
 
       {/* BANNER SECTION */}
-
-      <section className={classes.Banner} id="banner">
-        <div className={classes.BannerContent}>
-          <h1>ASHIRWAAD</h1>
-          <p>
-            Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam
-            nonummy nibh euismod tincidunt ut laoreet dolore magna
-          </p>
-          <Link
-            to="/#bookTable"
-            style={{ textDecoration: "none", color: "inherit" }}
-          >
-            <button>BOOK A TABLE</button>
-          </Link>
-        </div>
-      </section>
+      <HomepageBanner />
 
       {/* ABOUT SECTION */}
 
